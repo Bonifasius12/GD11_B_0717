@@ -3,7 +3,7 @@ package com.example.gd11_b_0717
 
 import android.view.View
 import android.view.ViewGroup
-import androidx.test.espresso.Espresso
+import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.UiController
 import androidx.test.espresso.ViewAction
 import androidx.test.espresso.action.ViewActions.*
@@ -14,7 +14,8 @@ import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import org.hamcrest.Description
 import org.hamcrest.Matcher
-import org.hamcrest.Matchers
+import org.hamcrest.Matchers.`is`
+import org.hamcrest.Matchers.allOf
 import org.hamcrest.TypeSafeMatcher
 import org.junit.Rule
 import org.junit.Test
@@ -30,14 +31,14 @@ class AddEditActivityTest {
 
     @Test
     fun addEditActivityTest() {
-        val materialButton = Espresso.onView(
-            Matchers.allOf(
+        val materialButton = onView(
+            allOf(
                 withId(R.id.btn_save), withText("Simpan"),
                 childAtPosition(
-                    Matchers.allOf(
+                    allOf(
                         withId(R.id.ll_button),
                         childAtPosition(
-                            withClassName(Matchers.`is`("androidx.constraintlayout.widget.ConstraintLayout")),
+                            withClassName(`is`("androidx.constraintlayout.widget.ConstraintLayout")),
                             1
                         )
                     ),
@@ -47,10 +48,10 @@ class AddEditActivityTest {
             )
         )
         materialButton.perform(click())
-        Espresso.onView(isRoot()).perform(waitFor(3000))
+        onView(isRoot()).perform(waitFor(3000))
 
-        val textInputEditText = Espresso.onView(
-            Matchers.allOf(
+        val textInputEditText = onView(
+            allOf(
                 withId(R.id.et_nama),
                 childAtPosition(
                     childAtPosition(
@@ -61,16 +62,16 @@ class AddEditActivityTest {
                 )
             )
         )
-        textInputEditText.perform(scrollTo(), replaceText("A"), closeSoftKeyboard())
+        textInputEditText.perform(scrollTo(), replaceText("boni"), closeSoftKeyboard())
 
-        val materialButton2 = Espresso.onView(
-            Matchers.allOf(
+        val materialButton2 = onView(
+            allOf(
                 withId(R.id.btn_save), withText("Simpan"),
                 childAtPosition(
-                    Matchers.allOf(
+                    allOf(
                         withId(R.id.ll_button),
                         childAtPosition(
-                            withClassName(Matchers.`is`("androidx.constraintlayout.widget.ConstraintLayout")),
+                            withClassName(`is`("androidx.constraintlayout.widget.ConstraintLayout")),
                             1
                         )
                     ),
@@ -80,10 +81,10 @@ class AddEditActivityTest {
             )
         )
         materialButton2.perform(click())
-        Espresso.onView(isRoot()).perform(waitFor(3000))
+        onView(isRoot()).perform(waitFor(3000))
 
-        val textInputEditText2 = Espresso.onView(
-            Matchers.allOf(
+        val textInputEditText2 = onView(
+            allOf(
                 withId(R.id.et_npm),
                 childAtPosition(
                     childAtPosition(
@@ -94,16 +95,16 @@ class AddEditActivityTest {
                 )
             )
         )
-        textInputEditText2.perform(scrollTo(), replaceText("1"), closeSoftKeyboard())
+        textInputEditText2.perform(scrollTo(), replaceText("200710717"), closeSoftKeyboard())
 
-        val materialButton3 = Espresso.onView(
-            Matchers.allOf(
+        val materialButton3 = onView(
+            allOf(
                 withId(R.id.btn_save), withText("Simpan"),
                 childAtPosition(
-                    Matchers.allOf(
+                    allOf(
                         withId(R.id.ll_button),
                         childAtPosition(
-                            withClassName(Matchers.`is`("androidx.constraintlayout.widget.ConstraintLayout")),
+                            withClassName(`is`("androidx.constraintlayout.widget.ConstraintLayout")),
                             1
                         )
                     ),
@@ -113,10 +114,10 @@ class AddEditActivityTest {
             )
         )
         materialButton3.perform(click())
-        Espresso.onView(isRoot()).perform(waitFor(3000))
+        onView(isRoot()).perform(waitFor(3000))
 
-        val textInputEditText3 = Espresso.onView(
-            Matchers.allOf(
+        val textInputEditText3 = onView(
+            allOf(
                 withId(R.id.ed_fakultas),
                 childAtPosition(
                     childAtPosition(
@@ -129,14 +130,14 @@ class AddEditActivityTest {
         )
         textInputEditText3.perform(scrollTo(), replaceText("FTI"), closeSoftKeyboard())
 
-        val materialButton4 = Espresso.onView(
-            Matchers.allOf(
+        val materialButton4 = onView(
+            allOf(
                 withId(R.id.btn_save), withText("Simpan"),
                 childAtPosition(
-                    Matchers.allOf(
+                    allOf(
                         withId(R.id.ll_button),
                         childAtPosition(
-                            withClassName(Matchers.`is`("androidx.constraintlayout.widget.ConstraintLayout")),
+                            withClassName(`is`("androidx.constraintlayout.widget.ConstraintLayout")),
                             1
                         )
                     ),
@@ -146,10 +147,10 @@ class AddEditActivityTest {
             )
         )
         materialButton4.perform(click())
-        Espresso.onView(isRoot()).perform(waitFor(3000))
+        onView(isRoot()).perform(waitFor(3000))
 
-        val textInputEditText4 = Espresso.onView(
-            Matchers.allOf(
+        val textInputEditText4 = onView(
+            allOf(
                 withId(R.id.ed_prodi),
                 childAtPosition(
                     childAtPosition(
@@ -162,14 +163,14 @@ class AddEditActivityTest {
         )
         textInputEditText4.perform(scrollTo(), replaceText("Informatika"), closeSoftKeyboard())
 
-        val materialButton5 = Espresso.onView(
-            Matchers.allOf(
+        val materialButton5 = onView(
+            allOf(
                 withId(R.id.btn_save), withText("Simpan"),
                 childAtPosition(
-                    Matchers.allOf(
+                    allOf(
                         withId(R.id.ll_button),
                         childAtPosition(
-                            withClassName(Matchers.`is`("androidx.constraintlayout.widget.ConstraintLayout")),
+                            withClassName(`is`("androidx.constraintlayout.widget.ConstraintLayout")),
                             1
                         )
                     ),
@@ -179,7 +180,7 @@ class AddEditActivityTest {
             )
         )
         materialButton5.perform(click())
-        Espresso.onView(isRoot()).perform(waitFor(3000))
+        onView(isRoot()).perform(waitFor(3000))
     }
 
 
